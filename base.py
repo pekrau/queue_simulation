@@ -122,6 +122,10 @@ class Simulation(object):
     def get_mean_delay(self):
         return sum(self.delays)/len(self.delays)
     
+    def get_mean_positive_delay(self):
+        positive_delays = [d for d in self.delays if d > 0.0]
+        return sum(positive_delays)/len(positive_delays)
+    
     def get_median_delay(self):
         return self.delays[len(self.delays)/2]
 

@@ -18,6 +18,7 @@ N = 20
 
 fraction_delayed_writer = csv.writer(open('fraction_delayed.csv', 'w'))
 mean_delays_writer = csv.writer(open('mean_delays.csv', 'w'))
+mean_positive_delays_writer = csv.writer(open('mean_positive_delays.csv', 'w'))
 median_delays_writer = csv.writer(open('median_delays.csv', 'w'))
 
 utilization = 0.0
@@ -27,11 +28,13 @@ while True:
     simulation = base.Simulation(n_machines=N_MACHINES, utilization=utilization)
     fraction_delayed = []
     mean_delays = []
+    mean_positive_delays = []
     median_delays = []
     for n in xrange(N):
         simulation.run(n_tasks=N_TASKS, duration=DURATION)
         fraction_delayed.append(simulation.get_number_delayed()/float(N_TASKS))
         mean_delays.append(simulation.get_mean_delay())
+        mean_positive_delays.append(simulation.get_mean_positive_delay())
         median_delays.append(simulation.get_median_delay())
     fraction_delayed_writer.writerow((utilization,
                                       statistics.mean(fraction_delayed),
@@ -39,6 +42,9 @@ while True:
     mean_delays_writer.writerow((utilization,
                                  statistics.mean(mean_delays),
                                  statistics.sstdev(mean_delays)))
+    mean_positive_delays_writer.writerow((utilization,
+                                          statistics.mean(mean_positive_delays),
+                                          statistics.sstdev(mean_positive_delays)))
     median_delays_writer.writerow((utilization,
                                    statistics.mean(median_delays),
                                    statistics.sstdev(median_delays)))
