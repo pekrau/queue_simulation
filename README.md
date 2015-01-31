@@ -1,7 +1,8 @@
 Simple queue simulation
 =======================
 
-Source code for my blog post [] See the blog post for context.
+Source code for my blog post [Därför är köer oundvikliga](https://kraulis.wordpress.com/2015/01/31/darfor-ar-koer-oundvikliga/)
+See the blog post for context.
 
 This code is general for more than one machine per facility, but in
 the blog post, only the case involving one machine is discussed. In
