@@ -10,7 +10,7 @@ import heapq
 # Python Imaging Library (PIL) http://www.pythonware.com/products/pil/
 import Image, ImageDraw
 
-SEED = 2718
+SEED = 27182
 random.seed(SEED)
 
 

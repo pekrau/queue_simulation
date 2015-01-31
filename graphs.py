@@ -6,13 +6,12 @@ from __future__ import unicode_literals, print_function, absolute_import
 
 import base
 
-N_MACHINES = 1
 DURATION = 5.0
 
 def write_case(n_tasks, utilization, ymax=400):
-    simulation = base.Simulation(n_machines=N_MACHINES, utilization=utilization)
+    simulation = base.Simulation(n_machines=1, utilization=utilization)
     simulation.run(n_tasks=n_tasks, duration=DURATION)
-    filename = "queue_{}_{}.png".format(N_MACHINES, int(100*utilization))
+    filename = "queue_{}.png".format(int(100*utilization))
     simulation.write_image(filename, ymax=ymax)
     print('----', "{}%".format(int(100*utilization)), '----')
     print('tasks:', simulation.n_tasks)
