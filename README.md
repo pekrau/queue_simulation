@@ -1,8 +1,14 @@
 Simple queue simulation
 =======================
 
-Source code for my blog post [Därför är köer oundvikliga](https://kraulis.wordpress.com/2015/01/31/darfor-ar-koer-oundvikliga/)
+Source code for my blog post [Why queues are inevitable](https://kraulis.wordpress.com/2015/01/31/why-queues-are-inevitable/)
 See the blog post for context.
+
+A few notes about the terminology: "Machine" means a processing unit,
+which can be a care team in hospital care, or a DNA sequencing machine
+at the NGI. "Task" is in the health care a patient with a particular
+disease to be treated, while it is a sample (or set of samples) at
+NGI.
 
 This code is general for more than one machine per facility, but in
 the blog post, only the case involving one machine is discussed. In
